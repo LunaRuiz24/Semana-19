@@ -1,0 +1,25 @@
+from abc import ABC, abstractmethod
+
+class Vehiculo(ABC):
+    def __init__(self, marca):
+        self.marca = marca
+
+    @abstractmethod
+    def arrancar_motor(self):
+        pass
+
+    @abstractmethod
+    def detener_motor(self):
+        pass
+
+class Motocicleta(Vehiculo):
+    def arrancar_motor(self):
+        print(f"{self.marca} motor de motocicleta arrancado")
+
+    def detener_motor(self):
+        print(f"{self.marca} motor de motocicleta parado")
+
+motorcicleta = Motocicleta("Yamaha")
+motorcicleta.arrancar_motor()
+motorcicleta.detener_motor()
+

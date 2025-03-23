@@ -1,0 +1,49 @@
+class Metodo_de_Pago:
+    def __init__(self, nombre, monto):
+        self.nombre = nombre
+        self.monto = monto
+
+    def mostrar_informacion(self):
+        return f"Titular: {self.nombre}, Monto: ${self.monto}"
+
+class Tarjeta_de_Credito(Metodo_de_Pago):
+    def __init__(self, nombre, monto, numero_tarjeta, fecha):
+        super().__init__(nombre, monto)
+        self.numero_tarjeta = numero_tarjeta
+        self.fecha = fecha
+
+    def mostrar_informacion(self):
+        return f"{super().mostrar_informacion()}, Número de Tarjeta: {self.numero_tarjeta}, Fecha de Expiración: {self.fecha}, Método: Tarjeta de Crédito"
+
+class Paypal(Metodo_de_Pago):
+    def __init__(self, nombre, monto, correo_electronico):
+        super().__init__(nombre, monto)
+        self.correo_electronico = correo_electronico
+
+    def mostrar_informacion(self):
+        return f"{super().mostrar_informacion()}, Correo Electrónico: {self.correo_electronico}, Método: PayPal"
+
+class Nequi(Metodo_de_Pago):
+    def __init__(self, nombre, monto, numero_celular):
+        super().__init__(nombre, monto)
+        self.numero_celular = numero_celular
+
+    def mostrar_informacion(self):
+        return f"{super().mostrar_informacion()}, Número de Celular: {self.numero_celular}, Método: Nequi"
+
+class Efectivo(Metodo_de_Pago):
+    def __init__(self, nombre, monto):
+        super().__init__(nombre, monto)
+
+    def mostrar_informacion(self):
+        return f"{super().mostrar_informacion()}, Método: Efectivo"
+
+tarjeta = Tarjeta_de_Credito("Juan Pérez", 150.50, "1234-5678-9012-3456", "12/25")
+paypal = Paypal("Ana Gómez", 200.75, "ana.gomez@example.com")
+nequi = Nequi("Luis Diaz", 568.00, "3007654599")
+efectivo = Efectivo("Maria Mendoza", 100.00)
+
+print(tarjeta.mostrar_informacion())
+print(paypal.mostrar_informacion())
+print(nequi.mostrar_informacion())
+print(efectivo.mostrar_informacion())

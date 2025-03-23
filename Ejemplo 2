@@ -1,0 +1,24 @@
+from abc import ABC, abstractmethod
+class Forma(ABC):
+    @abstractmethod
+    def area(self):
+        pass
+
+    @abstractmethod
+    def perimetro(self):
+        pass
+
+class Rectangulo(Forma):
+    def __init__(self, ancho, alto):
+        self.ancho = ancho
+        self.alto = alto
+
+    def area(self):
+        return self.ancho * self.alto
+
+    def perimetro(self):
+        return 2 * (self.ancho + self.alto)
+
+rectangulo = Rectangulo(5, 10)
+print("Área:", rectangulo.area())  
+print("Perímetro:", rectangulo.perimetro())

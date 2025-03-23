@@ -1,0 +1,22 @@
+from abc import ABC, abstractmethod
+
+class Electrodoméstico(ABC):
+    @abstractmethod
+    def encender(self):
+        pass
+
+    @abstractmethod
+    def apagar(self):
+        pass
+
+class Lavadora(Electrodoméstico):
+    def encender(self):
+        print("La lavadora esta encendida")
+
+    def apagar(self):
+        print("La lavadora esta apagada")
+
+máquina = Lavadora()
+máquina.encender()
+máquina.apagar()
+

@@ -1,0 +1,21 @@
+from abc import ABC, abstractmethod
+
+class Vehiculo(ABC):
+    @abstractmethod
+    def motor_de_arranque(self):
+        pass
+
+    @abstractmethod
+    def motor_de_parada(self):
+        pass
+
+class Carro(Vehiculo):  # Corregido: "Vehicle" con "V" mayúscula
+    def motor_de_arranque(self):
+        print("Motor del carro arrancado")
+
+    def motor_de_parada(self):
+        print("Motor del coche parado")
+
+carro = Carro()
+carro.motor_de_arranque()
+carro.motor_de_parada()
